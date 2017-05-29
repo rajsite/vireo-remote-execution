@@ -1,0 +1,12 @@
+*.gcompcache
+*.lvprojectcache
+*.niaddoncache
+*.lvcodedb
+*.lvcompile
+*.aliases
+*.lvlps
+*.gcompcache-journal
+*.lvcompile
+.cache
+ni-webvi-resource-v0/
+node_modules/

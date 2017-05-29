@@ -1,0 +1,30 @@
+{
+  "name": "vireo-remote-execution",
+  "version": "0.0.1",
+  "description": "What am I about?",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "express-remarkable": "^0.3.0",
+    "response-time": "^2.3.2",
+    "uuid": "^3.0.1",
+    "vireo": "5.5.2",
+    "xhr2": "^0.1.4"
+  },
+  "engines": {
+    "node": "6.10.x"
+  },
+  "repository": {
+    "url": "https://glitch.com/edit/#!/welcome-project"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "express"
+  ]
+}
