@@ -1,5 +1,11 @@
 /*jshint esnext: true*/
 'use strict';
+
+// load an XMLHTTPRequest implementation into the global scope
+// this allows Vireo to make network requests in the node environment
+// optional if the WebVI does not utilize the HTTP gvis
+global.XMLHttpRequest = require('xhr2').XMLHttpRequest;
+
 var uuidV4 = require('uuid/v4');
 
 // load the Vireo Constructor Function

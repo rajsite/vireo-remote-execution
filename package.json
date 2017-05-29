@@ -13,7 +13,8 @@
     "response-time": "^2.3.2",
     "uuid": "^3.0.1",
     "vireo": "5.5.2",
-    "xhr2": "^0.1.4"
+    "xhr2": "^0.1.4",
+    "webvi-npm": "NXG-v5.0.1.3237"
   },
   "engines": {
     "node": "6.10.x"

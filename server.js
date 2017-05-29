@@ -20,11 +20,10 @@ app.get('/', function (req, res) {
   res.render('README.md');
 });
 
-// load an XMLHTTPRequest implementation into the global scope
-// this allows Vireo to make network requests in the node environment
-// optional if the WebVI does not utilize the HTTP gvis
-global.XMLHttpRequest = require('xhr2').XMLHttpRequest;
-
+app.use('/client/ni-webvi-resource-v0', express.static('node_modules/webvi-npm/ni-webvi-resource-v0'));
+app.use("/client", express.static('RemoteExectionClient/Builds/Web Server/Configuration1/RemoteExecutionClient', {
+  index: ['Main.html', 'index.html']
+}));
 
 app.post('/vireos', bodyParser.json(), function (req, res) {
   var viaCode = req.body.viaCode;
