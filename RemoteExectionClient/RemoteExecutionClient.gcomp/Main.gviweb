@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<SourceFile Checksum="D42ECC45AADAF379BCCBA311D4392774" xmlns="http://www.ni.com/PlatformFramework">
+<SourceFile Checksum="952D08D661B3BD8401D6BC84B3DDF1F6" xmlns="http://www.ni.com/PlatformFramework">
 	<SourceModelFeatureSet>
-		<ParsableNamespace AssemblyFileVersion="5.0.1.3237" FeatureSetName="LabVIEW Controls" Name="http://www.ni.com/Controls.LabVIEW.Design" OldestCompatibleVersion="5.0.0.1" Version="5.0.0.49152" />
 		<ParsableNamespace AssemblyFileVersion="5.0.1.3237" FeatureSetName="LabVIEW Virtual Instrument" Name="http://www.ni.com/LabVIEW.VI" OldestCompatibleVersion="4.9.0.0" Version="5.0.0.49152" />
 		<ParsableNamespace AssemblyFileVersion="5.0.1.3237" FeatureSetName="Common language components" Name="http://www.ni.com/MocCommon" OldestCompatibleVersion="4.9.0.0" Version="4.9.0.49152" />
 		<ParsableNamespace AssemblyFileVersion="5.0.1.3237" FeatureSetName="Html VI" Name="http://www.ni.com/NationalInstruments.LabVIEW.HtmlVI" OldestCompatibleVersion="4.5.0.0" Version="4.5.0.49152" />
@@ -57,21 +56,9 @@
 					<p.Text>milliseconds to wait</p.Text>
 				</NodeLabel>
 				<Wire Id="25" Joints="N(23:Out)|(375,285) N(22:time to wait)|(385,285)" xmlns="http://www.ni.com/PlatformFramework" />
-				<DataAccessor Bounds="50 325 40 15" DataItem="26" Id="29" Label="30" xmlns="http://www.ni.com/MocCommon">
-					<Terminal DataType="Int32" Direction="Input" Hotspot="3 5" Id="Value" xmlns="http://www.ni.com/PlatformFramework" />
-				</DataAccessor>
-				<NodeLabel AttachedTo="29" Bounds="95 325 74 14" Id="30" xmlns="http://www.ni.com/PlatformFramework">
-					<p.Text>loop iteration</p.Text>
-				</NodeLabel>
-				<Wire Id="31" Joints="N(17:Output)|(20,330) N(29:Value)|(53,330)" xmlns="http://www.ni.com/PlatformFramework" />
+				<Wire Id="31" Joints="N(17:Output)|(20,330) h(33)" xmlns="http://www.ni.com/PlatformFramework" />
 			</WhileLoop>
 		</BlockDiagram>
-		<HtmlFrontPanel Height="[float]1600" Id="14" Left="[float]0" MinHeight="[float]0" MinWidth="[float]0" PanelSizeMode="Fixed" Top="[float]0" Width="[float]2000" xmlns="http://www.ni.com/NationalInstruments.LabVIEW.HtmlVI">
-			<HtmlNumericText BaseName="[string]Numeric" Height="[float]24" Id="27" InteractionMode="[NumericTextBoxInteractionModes]ReadOnly" Interval="[int]1" Label="[UIModel]32" Left="[float]212" MinHeight="[float]24" TabIndex="[int]0" Top="[float]180" Value="{DataItemBinding Id=26}" ValueType="[Type]Int32" Width="[float]72" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
-			<HtmlLabel Height="[float]16" Id="32" LabelOwner="[UIModel]27" Left="[float]212" Text="[string]loop iteration" Top="[float]160" Width="[float]72" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
-		</HtmlFrontPanel>
-		<DataItem AdaptToDiagramType="True" DataType="Int32" Id="26" Name="loop iteration" xmlns="http://www.ni.com/MocCommon">
-			<p.DefaultValue>0</p.DefaultValue>
-		</DataItem>
+		<HtmlFrontPanel Height="[float]1600" Id="14" Left="[float]0" MinHeight="[float]0" MinWidth="[float]0" PanelSizeMode="Fixed" Top="[float]0" Width="[float]2000" xmlns="http://www.ni.com/NationalInstruments.LabVIEW.HtmlVI" />
 	</VirtualInstrument>
 </SourceFile>

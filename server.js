@@ -34,17 +34,39 @@ app.post('/vireos', bodyParser.json(), function (req, res) {
   });
 });
 
-app.post('/vireos/:instanceId/run', function (req, res) {
+app.use('/vireos/:instanceId', function (req, res, next) {
   var vireoRunner = VireoRunner.getVireoRunner(req.params.instanceId);
   if (vireoRunner === undefined) {
     res.status(404).send({
       error: 'Could not find vireo instance: ' + req.params.instanceId
     });
+    return;
   }
 
+  req.vireoRunner = vireoRunner;
+  next();
+});
+
+app.get('/vireos/:instanceId', function (req, res) {
+  var vireoRunner = req.vireoRunner;
+  res.send({
+    state: vireoRunner.state,
+    printLog: vireoRunner.printLog,
+    errorLog: vireoRunner.printErrorLog
+  });
+});
+
+app.get('/vireos/:instanceId/controls', function (req, res) {
+  var vireoRunner = req.vireoRunner;
+  res.set('Content-Type', 'application/json');
+  res.send(vireoRunner.getAllControls());
+});
+
+app.post('/vireos/:instanceId/run', function (req, res) {
+  var vireoRunner = req.vireoRunner;
   vireoRunner.run();
   res.send({
-    status: vireoRunner.status
+    state: vireoRunner.state
   });
 });
 

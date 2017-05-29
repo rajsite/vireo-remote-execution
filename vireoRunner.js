@@ -6,7 +6,15 @@
 // optional if the WebVI does not utilize the HTTP gvis
 global.XMLHttpRequest = require('xhr2').XMLHttpRequest;
 
-var uuidV4 = require('uuid/v4');
+// Use pronounceable url example from jsbin http://jsbin.com/help/pronounceable-urls
+var pronounceableId = function (length) {
+    var vowels = 'aeiou', consonants = 'bcdfghjklmnpqrstvwxyz', word = '', index = 0, set;
+    for (; index < length; index += 1) {
+        set = (index % 2 === 0) ? consonants : vowels;
+        word += set[Math.floor(Math.random() * set.length)];
+    }
+    return word;
+};
 
 // load the Vireo Constructor Function
 var Vireo = require('vireo');
@@ -44,22 +52,33 @@ class VireoRunner {
         var enqueueMatch = viaCodeWithEnqueue.match(enqueueRegex);
         this.viaEnqueueCommand = enqueueMatch[0];
         this.viName = enqueueMatch[1];
-
         this.vireo = new Vireo();
+        this.instanceId = pronounceableId(8);
 
         // register some logging functions (only used for debugging)
-        // TODO maybe cache the output to serve at an endpoint?
         // TODO should check for errors in output when doing loadVia
-        this.vireo.eggShell.setPrintFunction(console.log);
-        this.vireo.eggShell.setPrintErrorFunction(console.error);
+        this._printLog = [];
+        this._printErrorLog = [];
+
+        // TODO limit cache size
+        this.vireo.eggShell.setPrintFunction(message => {
+            console.log('[Vireo instance ' + this.instanceId + ']:', message);
+            this._printLog.push(message)
+        });
+        this.vireo.eggShell.setPrintErrorFunction(message => {
+            console.error('[Vireo instance ' + this.instanceId + ']:', message);
+            this._printErrorLog.push(message)
+        });
 
         this.vireo.eggShell.loadVia(viaCode);
         this.state = VIREO_STATES.PREQUEUED;
         this.timer = undefined;
 
         this._queueIfEmptyQueue();
+        if (instances.has(this.instanceId)) {
+            throw new Error('Randomly generated instance name collision');
+        }
 
-        this.instanceId = uuidV4();
         instances.set(this.instanceId, this);
     }
 
@@ -121,6 +140,25 @@ class VireoRunner {
 
         this._cleanup();
         this.state = VIREO_STATES.ABORTED;
+    }
+
+    get printLog () {
+        return this._printLog.join('\n');
+    }
+
+    get printErrorLog () {
+        return this._printErrorLog.join('\n');
+    }
+
+    getAllControls () {
+        // Vireo returns controls as an object with name, value.
+        // Transform to an array of objects for easier parsing in some languages
+        var controlsJSON = this.vireo.eggShell.readJSON(this.viName, '');
+        var controls = JSON.parse(controlsJSON);
+        return Object.keys(controls).filter((controlName) => /^dataItem_/.test(controlName)).map((controlName) => ({
+            name: controlName,
+            value: controls[controlName]
+        }));
     }
 }
 
