@@ -58,8 +58,17 @@ app.get('/vireos/:instanceId', function (req, res) {
 
 app.get('/vireos/:instanceId/controls', function (req, res) {
   var vireoRunner = req.vireoRunner;
-  res.set('Content-Type', 'application/json');
-  res.send(vireoRunner.getAllControls());
+  // Vireo returns controls as an object with name, value.
+  // Transform to an array of objects for easier parsing in some languages
+  var controls = vireoRunner.getAllControls();
+  var filteredControls = Object.keys(controls).filter((controlName) => /^dataItem_/.test(controlName)).map((controlName) => ({
+      name: controlName,
+      value: controls[controlName]
+  }));
+  res.send({
+    state: vireoRunner.state,
+    controls: filteredControls
+  });
 });
 
 app.post('/vireos/:instanceId/run', function (req, res) {

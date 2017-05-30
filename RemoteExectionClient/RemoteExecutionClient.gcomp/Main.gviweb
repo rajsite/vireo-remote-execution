@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<SourceFile Checksum="952D08D661B3BD8401D6BC84B3DDF1F6" xmlns="http://www.ni.com/PlatformFramework">
+<SourceFile Checksum="4356B1A71A8F3BDA3493EAB18394890A" xmlns="http://www.ni.com/PlatformFramework">
 	<SourceModelFeatureSet>
+		<ParsableNamespace AssemblyFileVersion="5.0.1.3237" FeatureSetName="LabVIEW Controls" Name="http://www.ni.com/Controls.LabVIEW.Design" OldestCompatibleVersion="5.0.0.1" Version="5.0.0.49152" />
 		<ParsableNamespace AssemblyFileVersion="5.0.1.3237" FeatureSetName="LabVIEW Virtual Instrument" Name="http://www.ni.com/LabVIEW.VI" OldestCompatibleVersion="4.9.0.0" Version="5.0.0.49152" />
 		<ParsableNamespace AssemblyFileVersion="5.0.1.3237" FeatureSetName="Common language components" Name="http://www.ni.com/MocCommon" OldestCompatibleVersion="4.9.0.0" Version="4.9.0.49152" />
 		<ParsableNamespace AssemblyFileVersion="5.0.1.3237" FeatureSetName="Html VI" Name="http://www.ni.com/NationalInstruments.LabVIEW.HtmlVI" OldestCompatibleVersion="4.5.0.0" Version="4.5.0.49152" />
@@ -36,29 +37,303 @@
 		<DiagramUnplacedItems Id="10" xmlns="http://www.ni.com/MocCommon" />
 		<FrontPanelUnplacedItems Id="11" Left="[float]0" MinHeight="[float]0" MinWidth="[float]0" PanelSizeMode="Fixed" Top="[float]0" />
 		<BlockDiagram Id="12">
-			<WhileLoop Bounds="220 180 450 355" DiagramId="16" Id="15">
-				<LoopIteration Bounds="5 325 15 15" Id="17" />
-				<LoopCondition Bounds="410 320 15 15" Id="18" />
-				<Literal Bounds="355 320 25 15" DataType="Boolean" Facade="False Constant" Id="19" Label="20" xmlns="http://www.ni.com/MocCommon">
+			<WhileLoop Bounds="880 120 865 315" DiagramId="16" Id="15">
+				<LoopIteration Bounds="20 270 15 15" Id="17" />
+				<LoopCondition Bounds="95 230 15 15" Id="18" />
+				<Literal Bounds="65 230 25 15" DataType="Boolean" Facade="False Constant" Id="19" Label="20" xmlns="http://www.ni.com/MocCommon">
 					<p.Data>False</p.Data>
 					<BooleanBehavior />
 				</Literal>
-				<NodeLabel AttachedTo="19" Bounds="320 320 30 15" Id="20" Visible="False" xmlns="http://www.ni.com/PlatformFramework">
+				<NodeLabel AttachedTo="19" Bounds="30 230 30 15" Id="20" Visible="False" xmlns="http://www.ni.com/PlatformFramework">
 					<p.Text>stop</p.Text>
 				</NodeLabel>
-				<Wire Id="21" Joints="N(19:Out)|(380,325) N(18:Input)|(410,325)" xmlns="http://www.ni.com/PlatformFramework" />
-				<Wait Bounds="385 265 40 40" Id="22" />
-				<Literal Bounds="335 280 40 15" DataType="UInt32" Facade="Numeric" Id="23" Label="24" xmlns="http://www.ni.com/MocCommon">
+				<Wire Id="21" Joints="N(19:Out)|(90,235) N(18:Input)|(95,235)" xmlns="http://www.ni.com/PlatformFramework" />
+				<Wait Bounds="70 175 40 40" Id="22" />
+				<Literal Bounds="25 190 40 15" DataType="UInt32" Facade="Numeric" Id="23" Label="24" xmlns="http://www.ni.com/MocCommon">
 					<p.Data>50</p.Data>
 					<NumericBehavior Interpretation="Exact" ValueFormatter="LV:G6" />
 				</Literal>
-				<NodeLabel AttachedTo="23" Bounds="300 280 30 15" Id="24" Visible="False" xmlns="http://www.ni.com/PlatformFramework">
+				<NodeLabel AttachedTo="23" Bounds="-10 190 30 15" Id="24" Visible="False" xmlns="http://www.ni.com/PlatformFramework">
 					<p.Text>milliseconds to wait</p.Text>
 				</NodeLabel>
-				<Wire Id="25" Joints="N(23:Out)|(375,285) N(22:time to wait)|(385,285)" xmlns="http://www.ni.com/PlatformFramework" />
-				<Wire Id="31" Joints="N(17:Output)|(20,330) h(33)" xmlns="http://www.ni.com/PlatformFramework" />
+				<Wire Id="25" Joints="N(23:Out)|(65,195) N(22:time to wait)|(70,195)" xmlns="http://www.ni.com/PlatformFramework" />
+				<CaseStructure Bounds="130 15 715 280" Default="95" Id="94" Selected="96" UserSelectorBounds="314 0 88 17">
+					<CaseStructure.Case Bounds="5 5 705 270" Id="95" Pattern="False" />
+					<CaseStructure.Case Bounds="5 5 705 270" Id="96" Pattern="True">
+						<WhileLoop Bounds="295 40 205 215" DiagramId="299" Id="298">
+							<LoopIteration Bounds="5 185 15 15" Id="300" />
+							<LoopCondition Bounds="90 40 15 15" Id="301" />
+							<Wait Bounds="110 155 40 40" Id="309" />
+							<Literal Bounds="50 170 45 15" DataType="UInt32" Facade="Numeric" Id="310" Label="312" xmlns="http://www.ni.com/MocCommon">
+								<p.Data>100</p.Data>
+								<NumericBehavior Interpretation="Exact" ValueFormatter="LV:G6" />
+							</Literal>
+							<Wire Id="311" Joints="N(310:Out)|(95,175) N(309:time to wait)|(110,175)" xmlns="http://www.ni.com/PlatformFramework" />
+							<NodeLabel AttachedTo="310" Bounds="15 170 30 15" Id="312" Visible="False" xmlns="http://www.ni.com/PlatformFramework">
+								<p.Text>milliseconds to wait</p.Text>
+							</NodeLabel>
+							<DataAccessor Bounds="85 90 40 15" DataItem="365" Id="368" Label="369" xmlns="http://www.ni.com/MocCommon">
+								<Terminal DataType="String" Direction="Input" Hotspot="3 5" Id="Value" xmlns="http://www.ni.com/PlatformFramework" />
+							</DataAccessor>
+							<NodeLabel AttachedTo="368" Bounds="130 90 46 14" Id="369" xmlns="http://www.ni.com/PlatformFramework">
+								<p.Text>printLog</p.Text>
+							</NodeLabel>
+							<DataAccessor Bounds="75 120 40 15" DataItem="371" Id="374" Label="375" xmlns="http://www.ni.com/MocCommon">
+								<Terminal DataType="String" Direction="Input" Hotspot="3 5" Id="Value" xmlns="http://www.ni.com/PlatformFramework" />
+							</DataAccessor>
+							<NodeLabel AttachedTo="374" Bounds="120 120 74 14" Id="375" xmlns="http://www.ni.com/PlatformFramework">
+								<p.Text>printErrorLog</p.Text>
+							</NodeLabel>
+							<MethodCall Bounds="20 30 40 50" DomainName="Application:VireoApi" Id="433" ResolveFailedHint="" Target="Application:VireoApi:State\.gviweb" xmlns="http://www.ni.com/MocCommon">
+								<p.MethodDeclaration>
+									<MethodDeclaration xmlns="http://www.ni.com/PlatformFramework">
+										<Parameter Id="L0" Desc="instanceId in" />
+										<Parameter Id="L4" Desc="error in" />
+										<Parameter Id="R0" Desc="instanceId out" />
+										<Parameter Id="R1" Desc="running?" />
+										<Parameter Id="R2" Desc="printLog" />
+										<Parameter Id="R3" Desc="printErrorLog" />
+										<Parameter Id="R4" Desc="error out" />
+									</MethodDeclaration>
+								</p.MethodDeclaration>
+								<Terminal DataType="String" Direction="Input" Id="L0" xmlns="http://www.ni.com/PlatformFramework" />
+								<Terminal DataType="Error" Direction="Input" Hotspot="0 45" Id="L4" xmlns="http://www.ni.com/PlatformFramework" />
+								<Terminal DataType="String" Direction="Output" Hotspot="40 5" Id="R0" xmlns="http://www.ni.com/PlatformFramework" />
+								<Terminal DataType="Boolean" Direction="Output" Hotspot="40 15" Id="R1" xmlns="http://www.ni.com/PlatformFramework" />
+								<Terminal DataType="String" Direction="Output" Hotspot="40 25" Id="R2" xmlns="http://www.ni.com/PlatformFramework" />
+								<Terminal DataType="String" Direction="Output" Hotspot="40 35" Id="R3" xmlns="http://www.ni.com/PlatformFramework" />
+								<Terminal DataType="Error" Direction="Output" Hotspot="40 45" Id="R4" xmlns="http://www.ni.com/PlatformFramework" />
+							</MethodCall>
+							<Wire Id="439" Joints="N(438:i0)|(4,45) h(6) v(-10) N(433:L0)|(20,35)" xmlns="http://www.ni.com/PlatformFramework" />
+							<Wire Id="440" Joints="N(332:i0)|(4,75) N(433:L4)|(20,75)" xmlns="http://www.ni.com/PlatformFramework" />
+							<Wire Id="443" Joints="N(433:R4)|(60,75) N(331:299)|(191,75)" xmlns="http://www.ni.com/PlatformFramework" />
+							<Wire Id="445" Joints="N(433:R3)|(60,65) h(10) v(60) N(374:Value)|(78,125)" xmlns="http://www.ni.com/PlatformFramework" />
+							<Wire Id="446" Joints="N(433:R2)|(60,55) h(20) v(40) N(368:Value)|(88,95)" xmlns="http://www.ni.com/PlatformFramework" />
+							<Wire Id="539" Joints="N(433:R0)|(60,35) N(540:i0)|(191,35)" xmlns="http://www.ni.com/PlatformFramework" />
+							<Wire Id="556" Joints="N(433:R1)|(60,45) N(301:Input)|(90,45)" xmlns="http://www.ni.com/PlatformFramework" />
+							<RightShiftRegister Bounds="196 75 13 10" Docking="Right" Id="331" Terminals="298=541, 299=443" />
+							<LeftShiftRegister Bounds="-4 75 13 10" Docking="Left" Id="332" RightRegister="331" Terminals="o0=427, i0=440" />
+							<LoopTunnel Bounds="-4 45 13 10" Docking="Left" Id="438" Terminals="o0=437, i0=439" />
+							<LoopTunnel Bounds="196 35 13 10" Docking="Right" Id="540" Terminals="o0=542, i0=539" />
+						</WhileLoop>
+						<MethodCall Bounds="130 85 40 40" DomainName="Application:VireoApi" Id="404" ResolveFailedHint="" Target="Application:VireoApi:GetViaFile\.gviweb" xmlns="http://www.ni.com/MocCommon">
+							<p.MethodDeclaration>
+								<MethodDeclaration xmlns="http://www.ni.com/PlatformFramework">
+									<Parameter Id="L0" Desc="Selected VI" />
+									<Parameter Id="L3" Desc="error in" />
+									<Parameter Id="R0" Desc="viaCode" />
+									<Parameter Id="R3" Desc="error out" />
+								</MethodDeclaration>
+							</p.MethodDeclaration>
+							<Terminal DataType="@9a4ccc0d37a346baaa969a46e6be3f75" Direction="Input" Id="L0" xmlns="http://www.ni.com/PlatformFramework" />
+							<Terminal DataType="Error" Direction="Input" Hotspot="0 35" Id="L3" xmlns="http://www.ni.com/PlatformFramework" />
+							<Terminal DataType="String" Direction="Output" Hotspot="40 5" Id="R0" xmlns="http://www.ni.com/PlatformFramework" />
+							<Terminal DataType="Error" Direction="Output" Hotspot="40 35" Id="R3" xmlns="http://www.ni.com/PlatformFramework" />
+						</MethodCall>
+						<DataAccessor Bounds="80 85 40 15" DataItem="405" Id="409" Label="410" xmlns="http://www.ni.com/MocCommon">
+							<Terminal DataType="@9a4ccc0d37a346baaa969a46e6be3f75" Direction="Output" Hotspot="40 5" Id="Value" xmlns="http://www.ni.com/PlatformFramework" />
+						</DataAccessor>
+						<NodeLabel AttachedTo="409" Bounds="11 85 64 14" Id="410" xmlns="http://www.ni.com/PlatformFramework">
+							<p.Text>Selected VI</p.Text>
+						</NodeLabel>
+						<Wire Id="411" Joints="N(409:Value)|(120,90) N(404:L0)|(130,90)" xmlns="http://www.ni.com/PlatformFramework" />
+						<MethodCall Bounds="180 85 40 40" DomainName="Application:VireoApi" Id="415" ResolveFailedHint="" Target="Application:VireoApi:Create\.gviweb" xmlns="http://www.ni.com/MocCommon">
+							<p.MethodDeclaration>
+								<MethodDeclaration xmlns="http://www.ni.com/PlatformFramework">
+									<Parameter Id="L0" Desc="viaCode" />
+									<Parameter Id="L3" Desc="error in" />
+									<Parameter Id="R0" Desc="instanceId out" />
+									<Parameter Id="R3" Desc="error out" />
+								</MethodDeclaration>
+							</p.MethodDeclaration>
+							<Terminal DataType="String" Direction="Input" Id="L0" xmlns="http://www.ni.com/PlatformFramework" />
+							<Terminal DataType="Error" Direction="Input" Hotspot="0 35" Id="L3" xmlns="http://www.ni.com/PlatformFramework" />
+							<Terminal DataType="String" Direction="Output" Hotspot="40 5" Id="R0" xmlns="http://www.ni.com/PlatformFramework" />
+							<Terminal DataType="Error" Direction="Output" Hotspot="40 35" Id="R3" xmlns="http://www.ni.com/PlatformFramework" />
+						</MethodCall>
+						<Wire Id="416" Joints="N(404:R0)|(170,90) N(415:L0)|(180,90)" xmlns="http://www.ni.com/PlatformFramework" />
+						<Wire Id="417" Joints="N(404:R3)|(170,120) N(415:L3)|(180,120)" xmlns="http://www.ni.com/PlatformFramework" />
+						<MethodCall Bounds="230 85 40 40" DomainName="Application:VireoApi" Id="426" ResolveFailedHint="" Target="Application:VireoApi:Run\.gviweb" xmlns="http://www.ni.com/MocCommon">
+							<p.MethodDeclaration>
+								<MethodDeclaration xmlns="http://www.ni.com/PlatformFramework">
+									<Parameter Id="L0" Desc="instanceId in" />
+									<Parameter Id="L3" Desc="error in" />
+									<Parameter Id="R0" Desc="instanceId out" />
+									<Parameter Id="R3" Desc="error out" />
+								</MethodDeclaration>
+							</p.MethodDeclaration>
+							<Terminal DataType="String" Direction="Input" Id="L0" xmlns="http://www.ni.com/PlatformFramework" />
+							<Terminal DataType="Error" Direction="Input" Hotspot="0 35" Id="L3" xmlns="http://www.ni.com/PlatformFramework" />
+							<Terminal DataType="String" Direction="Output" Hotspot="40 5" Id="R0" xmlns="http://www.ni.com/PlatformFramework" />
+							<Terminal DataType="Error" Direction="Output" Hotspot="40 35" Id="R3" xmlns="http://www.ni.com/PlatformFramework" />
+						</MethodCall>
+						<Wire Id="427" Joints="N(426:R3)|(270,120) N(332:o0)|(291,120)" xmlns="http://www.ni.com/PlatformFramework" />
+						<Wire Id="428" Joints="N(415:R3)|(220,120) N(426:L3)|(230,120)" xmlns="http://www.ni.com/PlatformFramework" />
+						<Wire Id="436" Joints="N(415:R0)|(220,90) N(426:L0)|(230,90)" xmlns="http://www.ni.com/PlatformFramework" />
+						<Wire Id="437" Joints="N(426:R0)|(270,90) N(438:o0)|(291,90)" xmlns="http://www.ni.com/PlatformFramework" />
+						<MethodCall Bounds="520 75 40 50" DomainName="Application:VireoApi" Id="538" ResolveFailedHint="" Target="Application:VireoApi:State\.gviweb" xmlns="http://www.ni.com/MocCommon">
+							<p.MethodDeclaration>
+								<MethodDeclaration xmlns="http://www.ni.com/PlatformFramework">
+									<Parameter Id="L0" Desc="instanceId in" />
+									<Parameter Id="L4" Desc="error in" />
+									<Parameter Id="R0" Desc="instanceId out" />
+									<Parameter Id="R1" Desc="running?" />
+									<Parameter Id="R2" Desc="printLog" />
+									<Parameter Id="R3" Desc="printErrorLog" />
+									<Parameter Id="R4" Desc="error out" />
+								</MethodDeclaration>
+							</p.MethodDeclaration>
+							<Terminal DataType="String" Direction="Input" Id="L0" xmlns="http://www.ni.com/PlatformFramework" />
+							<Terminal DataType="Error" Direction="Input" Hotspot="0 45" Id="L4" xmlns="http://www.ni.com/PlatformFramework" />
+							<Terminal DataType="String" Direction="Output" Hotspot="40 5" Id="R0" xmlns="http://www.ni.com/PlatformFramework" />
+							<Terminal DataType="Boolean" Direction="Output" Hotspot="40 15" Id="R1" xmlns="http://www.ni.com/PlatformFramework" />
+							<Terminal DataType="String" Direction="Output" Hotspot="40 25" Id="R2" xmlns="http://www.ni.com/PlatformFramework" />
+							<Terminal DataType="String" Direction="Output" Hotspot="40 35" Id="R3" xmlns="http://www.ni.com/PlatformFramework" />
+							<Terminal DataType="Error" Direction="Output" Hotspot="40 45" Id="R4" xmlns="http://www.ni.com/PlatformFramework" />
+						</MethodCall>
+						<Wire Id="541" Joints="N(331:298)|(504,120) N(538:L4)|(520,120)" xmlns="http://www.ni.com/PlatformFramework" />
+						<Wire Id="542" Joints="N(540:o0)|(504,80) N(538:L0)|(520,80)" xmlns="http://www.ni.com/PlatformFramework" />
+						<DataAccessor Bounds="575 95 40 15" DataItem="365" Id="543" Label="544" xmlns="http://www.ni.com/MocCommon">
+							<Terminal DataType="String" Direction="Input" Hotspot="3 5" Id="Value" xmlns="http://www.ni.com/PlatformFramework" />
+						</DataAccessor>
+						<NodeLabel AttachedTo="543" Bounds="620 95 46 14" Id="544" xmlns="http://www.ni.com/PlatformFramework">
+							<p.Text>printLog</p.Text>
+						</NodeLabel>
+						<Wire Id="545" Joints="N(538:R2)|(560,100) N(543:Value)|(578,100)" xmlns="http://www.ni.com/PlatformFramework" />
+						<DataAccessor Bounds="575 115 40 15" DataItem="371" Id="546" Label="547" xmlns="http://www.ni.com/MocCommon">
+							<Terminal DataType="String" Direction="Input" Hotspot="3 5" Id="Value" xmlns="http://www.ni.com/PlatformFramework" />
+						</DataAccessor>
+						<NodeLabel AttachedTo="546" Bounds="620 115 74 14" Id="547" xmlns="http://www.ni.com/PlatformFramework">
+							<p.Text>printErrorLog</p.Text>
+						</NodeLabel>
+						<Wire Id="548" Joints="N(538:R3)|(560,110) h(13) v(10) N(546:Value)|(578,120)" xmlns="http://www.ni.com/PlatformFramework" />
+					</CaseStructure.Case>
+					<CaseStructure.Selector Bounds="-4 115 13 10" Docking="Left" Id="97" Terminals="94=106, 95, 96" />
+				</CaseStructure>
+				<DataAccessor Bounds="50 130 40 15" DataItem="101" Id="102" Label="105" xmlns="http://www.ni.com/MocCommon">
+					<Terminal DataType="Boolean" Direction="Output" Hotspot="40 5" Id="Value" xmlns="http://www.ni.com/PlatformFramework" />
+				</DataAccessor>
+				<NodeLabel AttachedTo="102" Bounds="23 130 22 14" Id="105" xmlns="http://www.ni.com/PlatformFramework">
+					<p.Text>Run</p.Text>
+				</NodeLabel>
+				<Wire Id="106" Joints="N(102:Value)|(90,135) N(97:94)|(126,135)" xmlns="http://www.ni.com/PlatformFramework" />
 			</WhileLoop>
 		</BlockDiagram>
-		<HtmlFrontPanel Height="[float]1600" Id="14" Left="[float]0" MinHeight="[float]0" MinWidth="[float]0" PanelSizeMode="Fixed" Top="[float]0" Width="[float]2000" xmlns="http://www.ni.com/NationalInstruments.LabVIEW.HtmlVI" />
+		<HtmlFrontPanel Height="[float]1600" Id="14" Left="[float]0" MinHeight="[float]0" MinWidth="[float]0" PanelSizeMode="Fixed" Top="[float]0" Width="[float]2000" xmlns="http://www.ni.com/NationalInstruments.LabVIEW.HtmlVI">
+			<HtmlBooleanSwitch BaseName="[string]Power Button" ClickMode="[ClickMode]Release" Height="[float]72" Id="103" IncludeInCapture="[bool]False" IsMomentary="[bool]False" Label="[UIModel]104" Left="[float]212" MinHeight="[float]20" MinWidth="[float]20" Shape="[SwitchShape]Power" TabIndex="[int]0" Top="[float]324" Value="{DataItemBinding Id=101}" Width="[float]72" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
+			<HtmlLabel Height="[float]16" Id="104" LabelAlignment="[PartAlignment]TopCenter" LabelOwner="[UIModel]103" Left="[float]238" Text="[string]Run" Top="[float]304" Width="[float]21" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
+			<HtmlStringControl AcceptsReturn="[bool]True" BaseName="[string]String" Height="[float]152" HorizontalScrollBarVisibility="[ScrollBarVisibility]Hidden" Id="366" IsReadOnly="[bool]True" Label="[UIModel]377" Left="[float]420" MinHeight="[float]21.6333332" TabIndex="[int]1" Text="{DataItemBinding Id=365}" Top="[float]100" VerticalScrollBarVisibility="[ScrollBarVisibility]Auto" Width="[float]696" xmlns="http://www.ni.com/Controls.LabVIEW.Design">
+				<FontSetting FontFamily="Courier New" FontSize="9" Id="550" xmlns="http://www.ni.com/PlatformFramework" />
+			</HtmlStringControl>
+			<HtmlLabel Height="[float]14" Id="377" LabelOwner="[UIModel]366" Left="[float]420" Text="[string]printLog" Top="[float]82" Width="[float]58" xmlns="http://www.ni.com/Controls.LabVIEW.Design">
+				<FontSetting FontFamily="Courier New" FontSize="9" Id="549" xmlns="http://www.ni.com/PlatformFramework" />
+			</HtmlLabel>
+			<HtmlStringControl AcceptsReturn="[bool]True" BaseName="[string]String" Height="[float]168" HorizontalScrollBarVisibility="[ScrollBarVisibility]Hidden" Id="372" IsReadOnly="[bool]True" Label="[UIModel]378" Left="[float]420" MinHeight="[float]21.6333332" TabIndex="[int]2" Text="{DataItemBinding Id=371}" Top="[float]276" VerticalScrollBarVisibility="[ScrollBarVisibility]Auto" Width="[float]696" xmlns="http://www.ni.com/Controls.LabVIEW.Design">
+				<FontSetting FontFamily="Courier New" FontSize="9" Id="552" xmlns="http://www.ni.com/PlatformFramework" />
+			</HtmlStringControl>
+			<HtmlLabel Height="[float]14" Id="378" LabelOwner="[UIModel]372" Left="[float]420" Text="[string]printErrorLog" Top="[float]258" Width="[float]94" xmlns="http://www.ni.com/Controls.LabVIEW.Design">
+				<FontSetting FontFamily="Courier New" FontSize="9" Id="551" xmlns="http://www.ni.com/PlatformFramework" />
+			</HtmlLabel>
+			<HtmlEnumSelector AllowUndefinedValueEntry="[bool]False" BaseName="[string]Enum" Height="[float]24" Id="406" InteractionMode="[SelectorInteractionModes]ArrowKeys, Keyboard, MouseClick, ScrollWheel, ButtonClicks" IsTypeAheadEnabled="[bool]True" Label="[UIModel]407" Left="[float]180" MinHeight="[float]24" MinWidth="[float]24" TabIndex="[int]3" Top="[float]164" Value="{DataItemBinding Id=405}" ValueType="[Type]UInt16" VisualMode="[SelectorVisualMode]RingStyle" Width="[float]136" xmlns="http://www.ni.com/Controls.LabVIEW.Design">
+				<EnumSelectorInfo DisplayValue="[string]Mandelbrot" DisplayValueOverride="[string]" Id="26" IsEnabled="[bool]True" Value="[ushort]0" ValueType="[Type]UInt16" />
+			</HtmlEnumSelector>
+			<HtmlLabel Height="[float]16" Id="407" LabelOwner="[UIModel]406" Left="[float]180" Text="[string]Selected VI" Top="[float]144" Width="[float]59" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
+		</HtmlFrontPanel>
+		<DataItem AdaptToDiagramType="True" DataType="Boolean" Id="101" IsLatched="True" Name="Run" xmlns="http://www.ni.com/MocCommon">
+			<p.DefaultValue>False</p.DefaultValue>
+		</DataItem>
+		<DataItem AdaptToDiagramType="True" DataType="String" Id="365" Name="printLog" xmlns="http://www.ni.com/MocCommon">
+			<p.DefaultValue>""</p.DefaultValue>
+		</DataItem>
+		<DataItem AdaptToDiagramType="True" DataType="String" Id="371" Name="printErrorLog" xmlns="http://www.ni.com/MocCommon">
+			<p.DefaultValue>""</p.DefaultValue>
+		</DataItem>
+		<DataItem AdaptToDiagramType="True" DataType="@9a4ccc0d37a346baaa969a46e6be3f75" Id="405" Name="Selected VI" xmlns="http://www.ni.com/MocCommon">
+			<p.DefaultValue>0</p.DefaultValue>
+		</DataItem>
 	</VirtualInstrument>
+	<DataTypeReferenceTable xmlns="http://www.ni.com/PlatformFramework">
+		<p.TypeReference TypeId="9a4ccc0d37a346baaa969a46e6be3f75">
+			<Enumeration>
+				<Members>
+					<EnumerationMember Value="0" Name="Mandelbrot" />
+				</Members>
+				<DataType>UInt16</DataType>
+			</Enumeration>
+		</p.TypeReference>
+	</DataTypeReferenceTable>
+	<IconTable xmlns="http://www.ni.com/PlatformFramework">
+		<p.IconModel Target="Application:VireoApi:State\.gviweb">
+			<MergeScript>
+				<MergeItem Path="." IsPrimary="True">
+					<Icon ListViewIconCrop="0 0 40 50">
+						<IconPanel Height="[float]50" Left="[float]0" MinHeight="[float]0" MinWidth="[float]0" PanelSizeMode="Resize" Top="[float]0" Width="[float]40">
+							<IconTemplate ClipMargin="[SMThickness]3,3,3,3" Height="[float]50" Left="[float]0" TemplateName="Gray" Top="[float]0" Width="[float]40">
+								<Rectangle Fill="[SMSolidColorBrush]#ff727272" IsHitTestVisible="[bool]False" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" RadiusX="[float]4" RadiusY="[float]4" Top="[float]0" />
+								<Rectangle Fill="[SMSolidColorBrush]#ffe5e5e5" IsHitTestVisible="[bool]False" Left="[float]0" Margin="[SMThickness]1,1,1,1" MinHeight="[float]1" MinWidth="[float]1" RadiusX="[float]2.5" RadiusY="[float]2.5" Stroke="[SMSolidColorBrush]#fff2f2f2" Top="[float]0" />
+								<FileNameText Attached="[bool]True" Height="[float]46" Left="[float]0" Margin="[SMThickness]2,2,2,2" SizeMode="[TextModelSizeMode]AutoFont" Text="[string]State" TextAlignment="[TextAlignment]Center" TextWrapping="[TextWrapping]Wrap" Top="[float]0" VerticalScrollBarVisibility="[ScrollBarVisibility]Hidden" Width="[float]36">
+									<FontSetting FontFamily="Verdana" FontSize="9.75" />
+								</FileNameText>
+							</IconTemplate>
+							<IconTemplate Height="[float]50" IsHitTestVisible="[bool]False" Left="[float]0" TemplateName="[Comp]RemoteExecutionClient.gcomp" Top="[float]0" Width="[float]40" />
+						</IconPanel>
+					</Icon>
+				</MergeItem>
+			</MergeScript>
+		</p.IconModel>
+		<p.IconModel Target="Application:VireoApi:GetViaFile\.gviweb">
+			<MergeScript>
+				<MergeItem Path="." IsPrimary="True">
+					<Icon ListViewIconCrop="0 0 40 40">
+						<IconPanel Height="[float]40" Left="[float]0" MinHeight="[float]0" MinWidth="[float]0" PanelSizeMode="Resize" Top="[float]0" Width="[float]40">
+							<IconTemplate ClipMargin="[SMThickness]3,3,3,3" Height="[float]40" Left="[float]0" TemplateName="Gray" Top="[float]0" Width="[float]40">
+								<Rectangle Fill="[SMSolidColorBrush]#ff727272" IsHitTestVisible="[bool]False" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" RadiusX="[float]4" RadiusY="[float]4" Top="[float]0" />
+								<Rectangle Fill="[SMSolidColorBrush]#ffe5e5e5" IsHitTestVisible="[bool]False" Left="[float]0" Margin="[SMThickness]1,1,1,1" MinHeight="[float]1" MinWidth="[float]1" RadiusX="[float]2.5" RadiusY="[float]2.5" Stroke="[SMSolidColorBrush]#fff2f2f2" Top="[float]0" />
+								<FileNameText Attached="[bool]True" Height="[float]36" Left="[float]0" Margin="[SMThickness]2,2,2,2" SizeMode="[TextModelSizeMode]AutoFont" Text="[string]GetViaFile" TextAlignment="[TextAlignment]Center" TextWrapping="[TextWrapping]Wrap" Top="[float]0" VerticalScrollBarVisibility="[ScrollBarVisibility]Hidden" Width="[float]36">
+									<FontSetting FontFamily="Verdana" FontSize="6" />
+								</FileNameText>
+							</IconTemplate>
+							<IconTemplate Height="[float]40" IsHitTestVisible="[bool]False" Left="[float]0" TemplateName="[Comp]RemoteExecutionClient.gcomp" Top="[float]0" Width="[float]40" />
+						</IconPanel>
+					</Icon>
+				</MergeItem>
+			</MergeScript>
+		</p.IconModel>
+		<p.IconModel Target="Application:VireoApi:Create\.gviweb">
+			<MergeScript>
+				<MergeItem Path="." IsPrimary="True">
+					<Icon ListViewIconCrop="0 0 40 40">
+						<IconPanel Height="[float]40" Left="[float]0" MinHeight="[float]0" MinWidth="[float]0" PanelSizeMode="Resize" Top="[float]0" Width="[float]40">
+							<IconTemplate ClipMargin="[SMThickness]3,3,3,3" Height="[float]40" Left="[float]0" TemplateName="Gray" Top="[float]0" Width="[float]40">
+								<Rectangle Fill="[SMSolidColorBrush]#ff727272" IsHitTestVisible="[bool]False" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" RadiusX="[float]4" RadiusY="[float]4" Top="[float]0" />
+								<Rectangle Fill="[SMSolidColorBrush]#ffe5e5e5" IsHitTestVisible="[bool]False" Left="[float]0" Margin="[SMThickness]1,1,1,1" MinHeight="[float]1" MinWidth="[float]1" RadiusX="[float]2.5" RadiusY="[float]2.5" Stroke="[SMSolidColorBrush]#fff2f2f2" Top="[float]0" />
+								<FileNameText Attached="[bool]True" Height="[float]36" Left="[float]0" Margin="[SMThickness]2,2,2,2" SizeMode="[TextModelSizeMode]AutoFont" Text="[string]Create" TextAlignment="[TextAlignment]Center" TextWrapping="[TextWrapping]Wrap" Top="[float]0" VerticalScrollBarVisibility="[ScrollBarVisibility]Hidden" Width="[float]36">
+									<FontSetting FontFamily="Verdana" FontSize="7.5" />
+								</FileNameText>
+							</IconTemplate>
+							<IconTemplate Height="[float]40" IsHitTestVisible="[bool]False" Left="[float]0" TemplateName="[Comp]RemoteExecutionClient.gcomp" Top="[float]0" Width="[float]40" />
+						</IconPanel>
+					</Icon>
+				</MergeItem>
+			</MergeScript>
+		</p.IconModel>
+		<p.IconModel Target="Application:VireoApi:Run\.gviweb">
+			<MergeScript>
+				<MergeItem Path="." IsPrimary="True">
+					<Icon ListViewIconCrop="0 0 40 40">
+						<IconPanel Height="[float]40" Left="[float]0" MinHeight="[float]0" MinWidth="[float]0" PanelSizeMode="Resize" Top="[float]0" Width="[float]40">
+							<IconTemplate ClipMargin="[SMThickness]3,3,3,3" Height="[float]40" Left="[float]0" TemplateName="Gray" Top="[float]0" Width="[float]40">
+								<Rectangle Fill="[SMSolidColorBrush]#ff727272" IsHitTestVisible="[bool]False" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" RadiusX="[float]4" RadiusY="[float]4" Top="[float]0" />
+								<Rectangle Fill="[SMSolidColorBrush]#ffe5e5e5" IsHitTestVisible="[bool]False" Left="[float]0" Margin="[SMThickness]1,1,1,1" MinHeight="[float]1" MinWidth="[float]1" RadiusX="[float]2.5" RadiusY="[float]2.5" Stroke="[SMSolidColorBrush]#fff2f2f2" Top="[float]0" />
+								<FileNameText Attached="[bool]True" Height="[float]36" Left="[float]0" Margin="[SMThickness]2,2,2,2" SizeMode="[TextModelSizeMode]AutoFont" Text="[string]Run" TextAlignment="[TextAlignment]Center" TextWrapping="[TextWrapping]Wrap" Top="[float]0" VerticalScrollBarVisibility="[ScrollBarVisibility]Hidden" Width="[float]36">
+									<FontSetting FontFamily="Verdana" FontSize="11.25" />
+								</FileNameText>
+							</IconTemplate>
+							<IconTemplate Height="[float]40" IsHitTestVisible="[bool]False" Left="[float]0" TemplateName="[Comp]RemoteExecutionClient.gcomp" Top="[float]0" Width="[float]40" />
+						</IconPanel>
+					</Icon>
+				</MergeItem>
+			</MergeScript>
+		</p.IconModel>
+	</IconTable>
 </SourceFile>

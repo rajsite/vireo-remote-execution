@@ -151,14 +151,7 @@ class VireoRunner {
     }
 
     getAllControls () {
-        // Vireo returns controls as an object with name, value.
-        // Transform to an array of objects for easier parsing in some languages
-        var controlsJSON = this.vireo.eggShell.readJSON(this.viName, '');
-        var controls = JSON.parse(controlsJSON);
-        return Object.keys(controls).filter((controlName) => /^dataItem_/.test(controlName)).map((controlName) => ({
-            name: controlName,
-            value: controls[controlName]
-        }));
+        return JSON.parse(this.vireo.eggShell.readJSON(this.viName, ''));
     }
 }
 

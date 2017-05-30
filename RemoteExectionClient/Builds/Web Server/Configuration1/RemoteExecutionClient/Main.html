@@ -41,11 +41,29 @@
 <style>
 		[data-ni-base-style] {position: absolute;}
 
-		jqx-numeric-text-box[ni-control-id='27']{
-			left: 212px; top: 180px; width: 72px; height: 24px; font-size: 12px; font-family: Segoe UI, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; 
+		jqx-power-button[ni-control-id='103']{
+			left: 212px; top: 324px; width: 72px; height: 72px; font-size: 12px; font-family: Segoe UI, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; 
 		}
-		ni-label[ni-control-id='32']{
-			left: 212px; top: 160px; width: 72px; height: 16px; font-size: 12px; font-family: Segoe UI, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; color: rgba(43,48,51,1); 
+		ni-label[ni-control-id='104']{
+			left: 238px; top: 304px; width: 21px; height: 16px; font-size: 12px; font-family: Segoe UI, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; color: rgba(43,48,51,1); 
+		}
+		ni-string-control[ni-control-id='366']{
+			left: 420px; top: 100px; width: 696px; height: 152px; font-size: 12px; font-family: Courier New, monospace; font-style: normal; font-weight: normal; text-decoration: none; 
+		}
+		ni-label[ni-control-id='377']{
+			left: 420px; top: 82px; width: 58px; height: 14px; font-size: 12px; font-family: Courier New, monospace; font-style: normal; font-weight: normal; text-decoration: none; color: rgba(43,48,51,1); 
+		}
+		ni-string-control[ni-control-id='372']{
+			left: 420px; top: 276px; width: 696px; height: 168px; font-size: 12px; font-family: Courier New, monospace; font-style: normal; font-weight: normal; text-decoration: none; 
+		}
+		ni-label[ni-control-id='378']{
+			left: 420px; top: 258px; width: 94px; height: 14px; font-size: 12px; font-family: Courier New, monospace; font-style: normal; font-weight: normal; text-decoration: none; color: rgba(43,48,51,1); 
+		}
+		ni-enum-selector[ni-control-id='406']{
+			left: 180px; top: 164px; width: 136px; height: 24px; font-size: 12px; font-family: Segoe UI, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; 
+		}
+		ni-label[ni-control-id='407']{
+			left: 180px; top: 144px; width: 59px; height: 16px; font-size: 12px; font-family: Segoe UI, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; color: rgba(43,48,51,1); 
 		}
 
 	</style></head>
@@ -54,9 +72,21 @@
     <div id="ni-outdated-browser-message" style="display:none">This browser is reporting compatibility with older browser technologies that may perform poorly if it all.</div>
     <div id="ni-failed-to-load-vireo-source" style="display:none">Unable to load required dependencies. Please verify all WebVI files are available and served using an http server or use a browser that can load files directly from the filesystem.</div>
     <section id="FrontPanelCanvas">
-    <jqx-numeric-text-box data-ni-base-style="uninitialized" ni-control-id='27' binding-info='{"prop":"value","dco":0,"dataItem":"dataItem_LoopIteration","unplacedOrDisabled":false,"sync":false}' label-id='32' readonly='true' value='0' min='-2147483648' max='2147483647' input-format='integer' integer-width='int32' popup-enabled='true' radix='decimal' significant-digits='6' spin-buttons-step='1'></jqx-numeric-text-box>
+    <jqx-power-button data-ni-base-style="uninitialized" ni-control-id='103' binding-info='{"prop":"value","dco":0,"dataItem":"dataItem_Run","unplacedOrDisabled":false,"sync":false}' label-id='104' click-mode='release' orientation='horizontal' switch-mode='click'><span class='jqx-true-content '></span><span class='jqx-false-content '></span></jqx-power-button>
 
-<ni-label data-ni-base-style="uninitialized" ni-control-id='32' binding-info='{}' label-id='' text='loop iteration'></ni-label>
+<ni-label data-ni-base-style="uninitialized" ni-control-id='104' binding-info='{}' label-id='' text='Run'></ni-label>
+
+<ni-string-control data-ni-base-style="uninitialized" ni-control-id='366' binding-info='{"prop":"text","dco":1,"dataItem":"dataItem_PrintLog","unplacedOrDisabled":false,"sync":false}' label-id='377' read-only='true' text='' accepts-return='true'></ni-string-control>
+
+<ni-label data-ni-base-style="uninitialized" ni-control-id='377' binding-info='{}' label-id='' text='printLog'></ni-label>
+
+<ni-string-control data-ni-base-style="uninitialized" ni-control-id='372' binding-info='{"prop":"text","dco":2,"dataItem":"dataItem_PrintErrorLog","unplacedOrDisabled":false,"sync":false}' label-id='378' read-only='true' text='' accepts-return='true'></ni-string-control>
+
+<ni-label data-ni-base-style="uninitialized" ni-control-id='378' binding-info='{}' label-id='' text='printErrorLog'></ni-label>
+
+<ni-enum-selector data-ni-base-style="uninitialized" ni-control-id='406' binding-info='{"prop":"value","dco":3,"dataItem":"dataItem_SelectedVI","unplacedOrDisabled":false,"sync":false}' label-id='407' popup-enabled='true' items='[{"displayValue":"Mandelbrot","value":"0"}]' value='{"numberValue":0}' ni-type='{"name":"Enum","subtype":"UInt16"}'></ni-enum-selector>
+
+<ni-label data-ni-base-style="uninitialized" ni-control-id='407' binding-info='{}' label-id='' text='Selected VI'></ni-label>
 
 </section>
 </body>
